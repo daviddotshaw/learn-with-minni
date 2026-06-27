@@ -31,18 +31,13 @@ async function initSplash() {
 
   await playSound('this-is');
   btn.classList.remove('hidden');
+  playSound('start');
 
-  // Play "click here to start" sound on hover (mouse) or first touch
-  btn.addEventListener('mouseenter', () => playSound('start'));
-
-  // On touch: play then navigate
-  btn.addEventListener('touchstart', async (e) => {
+  btn.addEventListener('touchstart', (e) => {
     e.preventDefault();
-    await playSound('start');
     showScreen('game-screen');
   }, { once: true, passive: false });
 
-  // On click (mouse): navigate (sound already played on hover)
   btn.addEventListener('click', () => {
     showScreen('game-screen');
   }, { once: true });
