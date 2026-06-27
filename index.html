@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#FF1493">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Learn with Minni">
+  <title>Learn with Minni!</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Splash Screen -->
+  <div id="splash-screen" class="screen active">
+    <h1 class="splash-title">Learn with Minni!</h1>
+    <div class="splash-image-wrap">
+      <img src="assets/images/minni.png" alt="Minni Mouse" class="splash-image" draggable="false">
+    </div>
+    <button id="start-btn" class="start-btn hidden">Touch here to start!</button>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="game-screen" class="screen">
+    <div class="game-header">
+      <h2 class="game-title">Touch a part of Minni!</h2>
+      <button id="quit-btn" class="quit-btn">Quit</button>
+    </div>
+
+    <div class="minni-wrap" id="minni-wrap">
+      <img src="assets/images/minni.png" alt="Minni Mouse" class="minni-img" draggable="false">
+
+      <!-- Clickable hotspots — positions tuned to the image layout -->
+      <div class="hotspot" id="hs-ear-left"   data-sound="ear"   data-label="Ear"></div>
+      <div class="hotspot" id="hs-ear-right"  data-sound="ear"   data-label="Ear"></div>
+      <div class="hotspot" id="hs-nose"       data-sound="nose"  data-label="Nose"></div>
+      <div class="hotspot" id="hs-tummy"      data-sound="tummy" data-label="Tummy"></div>
+      <div class="hotspot" id="hs-hand-right" data-sound="hand"  data-label="Hand"></div>
+      <div class="hotspot" id="hs-hand-left"  data-sound="hand"  data-label="Hand"></div>
+      <div class="hotspot" id="hs-feet"       data-sound="feet"  data-label="Feet"></div>
+
+      <!-- Label bubble -->
+      <div id="bubble" class="bubble hidden">
+        <span id="bubble-text"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
